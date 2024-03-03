@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./src/output.css">
+        <title>Lesson-4 Tailwind Todo va Contact List</title>
+    </head>
+    <body class="bg-[#202C36]">
+        <!-- Todo List  -->
+        <header>
+            <div class="container m-auto">
+                <div
+                    class="rounded min-h-64 mt-5 bg-[#293641] p-5 shadow-2xl">
+                    <h1 class="text-center text-white text-5xl mb-5">Todo
+                        List</h1>
+                    <div class="text-center">
+                        <form class="js-todo-form">
+                            <input
+                                class="js-todo-input p-2 mt-6 rounded w-4/5 border-b-black"
+                                type="text"
+                                placeholder="Enter your name"
+                                aria-label="Enter your name " required>
+                            <button
+                                class="py-2 px-5 rounded bg-green-800 hover:bg-green-900 text-white">Add</button>
+                        </form>
+                    </div>
+                    <ul class="js-item">
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <!-- Contact List -->
+        <main>
+            <section>
+                <div class="container m-auto">
+                    <div class="rounded mt-3 p-3 bg-[#293641] shadow-xl">
+                        <h1
+                            class="text-center text-4xl text-white mb-4">Contact
+                            List</h1>
+                        <div
+                            class="flex p-5 justify-between">
+                            <div
+                                class="m-4 mt-0 mb-0 w-[600px]">
+                                <form class="js-contact-form">
+                                    <input
+                                        class="p-2 mb-2 rounded w-full js-name-input"
+                                        type="text"
+                                        placeholder="Enter your name"
+                                        aria-label="Enter your name" required>
+                                    <input
+                                        class="p-2 mb-2 rounded w-full js-close-input"
+                                        list="close__people-input"
+                                        type="text"
+                                        placeholder="Enter your close people"
+                                        aria-label="Enter your name" required>
+                                    <datalist id="close__people-input">
+                                        <option value="Famliy"></option>
+                                        <option value="Friend"></option>
+                                        <option value="Relative"></option>
+                                        <option value="Like"></option>
+                                    </datalist>
+
+                                    <input
+                                        class="p-2 mb-2 rounded w-full js-number-input"
+                                        type="tel"
+                                        pattern="[+]\d{12}"
+                                        placeholder="(+998) Enter your number"
+                                        aria-label="(+998) Enter your number"
+                                        required>
+                                    <button
+                                        class="p-2 rounded text-white bg-green-800 hover:cursor-pointer hover:bg-green-900">Add
+                                        Contact</button>
+                                </form>
+                            </div>
+
+                            <div>
+                                <ul class="js-contact-item">
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- contact list template -->
+                <template class="js-contact-template">
+                    <li
+                        class="border rounded bg-white text-black w-[550px] p-2 mb-2 js-contact-link">
+                        <h5
+                            class="mb-2 text-2xl js-contact-name border-b-2 border-zinc-950">Sardorbek</h5>
+                        <div
+                            class="result flex items-center justify-between">
+                            <strong
+                                class="js-contact-close-people">famliy</strong>
+                            <a href="+998916286861"
+                                class="js-contact-number text-decoration-none">+998916286861</a>
+                            <button
+                                class="p-2 rounded bg-red-700 hover:bg-red-800 js-delete-btn text-white">Delete</button>
+                        </div>
+                    </li>
+                </template>
+            </section>
+        </main>
+
+        <!-- todo list template  -->
+        <template class="js-template">
+            <li
+                class="js-links flex items-center gap-x-6 mt-5 border w-4/6 justify-between pl-3 rounded-md m-auto bg-white">
+                <h5 class="js-user-name"></h5>
+                <button
+                    class="js-delete-btn border p-2 rounded-r-md bg-red-600 text-white">Delete</button>
+            </li>
+        </template>
+        <script src="./src/script.js"></script>
+    </body>
+</html>
